@@ -1,13 +1,13 @@
-import  "./ListStyle.css"
-import React, { useState } from 'react';
+import "./ListStyle.css";
+import React, { useState } from "react";
 
 function List({ users }) {
   const [userList, setUserList] = useState(users);
 
   const handleAddExclamations = (id) => {
-    const updatedUsers = userList.map(user => {
+    const updatedUsers = userList.map((user) => {
       if (user.id === id) {
-        return { ...user, name: '!!! ' + user.name };
+        return { ...user, name: "!!! " + user.name };
       }
       return user;
     });
@@ -22,7 +22,9 @@ function List({ users }) {
             <p>name - {item.name}</p>
             <p>age - {item.age}</p>
           </li>
-          <button onClick={() => handleAddExclamations(item.id)}>add !!!</button>
+          <button onClick={() => handleAddExclamations(item.id)}>
+            add !!!
+          </button>
         </div>
       ))}
     </>
