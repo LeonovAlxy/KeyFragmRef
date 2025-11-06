@@ -10,7 +10,6 @@ function App() {
     if (e.key === "Enter") {
       setInputArr((prev) => [...prev, inputText]);
     }
-    console.log({ inputArr });
   };
   const handleFocus = () => {
     inputRef.current.focus();
@@ -40,10 +39,13 @@ function App() {
         onChange={(e) => setText(e.target.value)}
         value={inputText}
       ></input>
+
       {inputArr.map((item) => (
-        <li>{item}</li>
+        <li key={item}>{item}</li>
       ))}
-      <button onClick={handleFocus}> focus input</button>
+
+      <button onClick={handleFocus}> focus input </button>
+
       <List users={usersArr} />
     </>
   );

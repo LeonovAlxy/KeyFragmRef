@@ -1,5 +1,5 @@
 import "./ListStyle.css";
-import React, { useState } from "react";
+import { useState } from "react";
 
 function List({ users }) {
   const [userList, setUserList] = useState(users);
@@ -17,7 +17,7 @@ function List({ users }) {
   return (
     <>
       {userList.map((item) => (
-        <div key={item.id} className="user">
+        <div key={`${item.id}_${item.name}_${item.age}`} className="user">
           <li>
             <p>name - {item.name}</p>
             <p>age - {item.age}</p>
